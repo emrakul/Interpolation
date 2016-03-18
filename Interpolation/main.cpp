@@ -7,7 +7,7 @@ int main(){
     
     int n;
     cin >> n;
-    std :: vector <pair<double, double> > shit;
+    std :: vector <pair<double, double> > args;
     for(int i = 0; i < n; ++i){
         double a, b;
         //cin >> a >> b;
@@ -17,10 +17,10 @@ int main(){
         s.first = a;
         s.second = b;
 
-        shit.push_back(s);
+        args.push_back(s);
 
     }
-    Interpolated Shit(shit);
+    Interpolated polynomial(args);
     
     cin >> n;
     for(int i = 1; i < n; ++i){
@@ -31,20 +31,18 @@ int main(){
         pair <double, double> s;
         s.first = a;
         s.second = b;
-        Shit.AddPoint(s);
+        polynomial.AddPoint(s);
     }
     
 
-    cout << Shit.evaluate(0.5) << endl;
-    cout << Shit.evaluate(1.5) << endl;
-    cout << Shit.evaluate(2.5) << endl;
-    cout << Shit.evaluate(3.5) << endl;
-    cout << Shit.evaluate(4.5) << endl;
-    cout << Shit.evaluate(5.5) << endl;
-    cout << Shit.evaluate(6.5) << endl;
-    cout << Shit.evaluate(7.5) << endl;
-    
-    //cout << Shit.evaluate(3.5);
+    cout << polynomial.evaluate(0.5) << endl;
+    cout << polynomial.evaluate(1.5) << endl;
+    cout << polynomial.evaluate(2.5) << endl;
+    cout << polynomial.evaluate(3.5) << endl;
+    cout << polynomial.evaluate(4.5) << endl;
+    cout << polynomial.evaluate(5.5) << endl;
+    cout << polynomial.evaluate(6.5) << endl;
+    cout << polynomial.evaluate(7.5) << endl;
 
 
     cin >> n;

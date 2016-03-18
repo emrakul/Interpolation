@@ -13,7 +13,7 @@ public:
     int degree;
 
     double evaluate (double);
-    double Shit(vector<int> is, int size);
+    double polynomial(vector<int> is, int size);
 
     Function* Base;
 

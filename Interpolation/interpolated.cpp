@@ -8,7 +8,7 @@ void fill0toN(vector <int> &a){                    //*
 //****************************************************
 
 
-double Interpolated :: Shit(vector <int> is, int size){
+double Interpolated :: polynomial(vector <int> is, int size){
     if(size == 1){
         return points[is[0]].second;
     }
@@ -26,7 +26,7 @@ double Interpolated :: Shit(vector <int> is, int size){
     
     
     
-    return ( Shit(tmp2, size - 1) - Shit(tmp1, size - 1) )/(points[is[size - 1]].first - points[is[0]].first);
+    return ( polynomial(tmp2, size - 1) - polynomial(tmp1, size - 1) )/(points[is[size - 1]].first - points[is[0]].first);
 
 
 }
@@ -40,7 +40,7 @@ Interpolated :: Interpolated(vector< pair< double, double> > &shit){
     fill0toN(is);
 
     for(int i = 0; i <= degree; ++i)
-        dividedDifferences[i] = Shit(is, i + 1);
+        dividedDifferences[i] = polynomial(is, i + 1);
     
 
 
@@ -53,7 +53,7 @@ void Interpolated :: AddPoint(pair< double, double> point){
     vector <int> is(degree + 1);
     fill0toN(is);
     
-    dividedDifferences.push_back(Shit(is, degree + 1) );
+    dividedDifferences.push_back(polynomial(is, degree + 1) );
 
 }
 
