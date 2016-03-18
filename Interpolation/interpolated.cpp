@@ -59,13 +59,13 @@ void Interpolated :: AddPoint(pair< double, double> point){
 
 double Interpolated :: evaluate(double x){
     double sum = 0;
-    double mnogo = 1;
+    double mult = 1;
     for(int i = 0; i <= degree; ++i){
-        mnogo = 1;
+        mult = 1;
         for(int j = 0; j < i; ++j)
-            mnogo *= (x - points[j].first);
+            mult *= (x - points[j].first);
 
-        sum += mnogo * dividedDifferences[i];       
+        sum += mult * dividedDifferences[i];       
     }
 
     return sum;
